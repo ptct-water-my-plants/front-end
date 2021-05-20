@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import signUpSchema from './Validation/SignupSchema'
 import * as yup from'yup'
+import { Link } from 'react-router-dom'
 
 const initialFormValues = {
     username: '',
@@ -63,7 +64,11 @@ const Signup = () => {
     return(
         <div>
             <h3>Sign Up for an Account</h3>
-            <p>Already have an account? Sign in here!</p>
+            <p>Already have an account?
+                <Link to={`/signin`}>
+                    <span>Sign in here!</span>
+                </Link>
+            </p>
             {/* Link to sign in page here  */}
             <form onSubmit={onSubmit}>
                 <label>Username 
