@@ -21,7 +21,11 @@ const Signup = () => {
     return(
         <div>
             <h3>Sign Up for an Account</h3>
-            <p>Already have an account? Sign in here!</p>
+            <p>Already have an account? 
+                <Link to={`/`}>
+                    <span>Sign in here!</span>
+                </Link>
+            </p>
             {/* Link to sign in page here  */}
             <form>
                 <label>Username 

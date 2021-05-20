@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import signInSchema from '../Validation/SignInSchema' 
 import * as yup from 'yup'
+import { Link } from 'react-router-dom'
 
 const initialFormValues = {
     username: '',
@@ -52,7 +53,11 @@ const Signin = () => {
     return(
         <div>
             <h3>Sign In</h3>
-            <p>New to Water My Plants? Sign up to get started here!</p>
+            <p>New to Water My Plants? 
+                <Link to={`/`}>
+                    <span>Sign up to get started here!</span>
+                </Link>
+            </p>
             {/* Link to sign up page here */}
             <form>
                 <label>Username
