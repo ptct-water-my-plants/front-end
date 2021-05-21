@@ -4,20 +4,20 @@ import * as yup from 'yup'
 import { Link } from 'react-router-dom'
 
 const initialFormValues = {
-    username: '',
-    password: '',
-}
+  username: "",
+  password: "",
+};
 
 const initialFormErrors = {
-    username: '',
-    password: '',
-}
+  username: "",
+  password: "",
+};
 
 const Signin = () => {
-    const [users, setUsers] = useState([])
-    const [formValues, setFormValues] = useState(initialFormValues)
-    const [formErrors, setFormErrors] = useState(inistialFormErrors)
-    const [disabled, setDisabled] = useState(true)
+  const [users, setUsers] = useState([]);
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(true);
 
     const onInputChange =  event => {
         const { name, value } = event.target
@@ -85,3 +85,5 @@ const Signin = () => {
         </div>
     )
 }
+
+export default Signin;
