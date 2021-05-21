@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import signUpSchema from './Validation/SignupSchema'
+import signUpSchema from '../Validation/SignupSchema'
 import * as yup from'yup'
 import { Link } from 'react-router-dom'
 
@@ -82,7 +82,7 @@ const Signup = () => {
                 <label>Email
                     <input
                         type='email'
-                        value={formvalues.email}
+                        value={formValues.email}
                         name='email'
                         onChange={onInputChange}
                     />
@@ -90,7 +90,7 @@ const Signup = () => {
                 <label>Password
                     <input
                         type='password'
-                        value={formvalues.email}
+                        value={formValues.email}
                         name='password'
                         onChange={onInputChange}
                     />
