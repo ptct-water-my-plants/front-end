@@ -4,22 +4,22 @@ import * as yup from'yup'
 import { Link } from 'react-router-dom'
 
 const initialFormValues = {
-    username: '',
-    email: '',
-    password: '',
-}
+  username: "",
+  email: "",
+  password: "",
+};
 
 const inistialFormErrors = {
-    username: '',
-    email: '',
-    password: '',
-}
+  username: "",
+  email: "",
+  password: "",
+};
 
 const Signup = () => {
-    const [users, setUsers] = useState([])
-    const [formValues, setFormValues] = useState(initialFormValues)
-    const [formErrors, setFormErrors] = useState(inistialFormErrors)
-    const [disabled, setDisabled] = useState(true)
+  const [users, setUsers] = useState([]);
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(inistialFormErrors);
+  const [disabled, setDisabled] = useState(true);
 
     const postUser = newUser => {
         setUsers([...users, newUser])
@@ -105,3 +105,5 @@ const Signup = () => {
         </div>
     )
 }
+
+export default Signup;
