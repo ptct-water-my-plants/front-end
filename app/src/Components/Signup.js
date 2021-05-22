@@ -57,9 +57,9 @@ const Signup = () => {
 
    useEffect(() => {
        signUpSchema.isValid(formValues).then((valid) => {
-        setDisabled(!valid)
+         setDisabled(!valid)
        })
-    }, [formValues])   
+    }, [formValues])
 
     return(
         <div>
