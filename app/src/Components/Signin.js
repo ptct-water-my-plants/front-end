@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import signInSchema from '../Validation/SignInSchema' 
-import * as yup from 'yup'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import signInSchema from "../Validation/SigninSchema";
+import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const initialFormValues = {
   username: "",
@@ -14,10 +14,10 @@ const initialFormErrors = {
 };
 
 const Signin = () => {
-  const [users, setUsers] = useState([]);
-  const [formValues, setFormValues] = useState(initialFormValues);
-  const [formErrors, setFormErrors] = useState(initialFormErrors);
-  const [disabled, setDisabled] = useState(true);
+    // const [users, setUsers] = useState([]);
+    const [formValues, setFormValues] = useState(initialFormValues);
+    const [formErrors, setFormErrors] = useState(initialFormErrors);
+    const [disabled, setDisabled] = useState(true);
 
     const onInputChange =  event => {
         const { name, value } = event.target
@@ -44,13 +44,13 @@ const Signin = () => {
         console.log('Existing user sign in', existingUser)
     }
 
-    useEffect(() =>{
-        signInSchema.isValid(formValues).then(valid => {
-            setDisabled(!valid)
+    useEffect(() => {
+        signInSchema.isValid(formValues).then((valid) => {
+         setDisabled(!valid)
         })
-    }, [formValues])
+     }, [formValues])  
 
-    return(
+    return (
         <div>
             <h3>Sign In</h3>
             <p>New to Water My Plants? 
@@ -58,8 +58,7 @@ const Signin = () => {
                     <span>Sign up to get started here!</span>
                 </Link>
             </p>
-            {/* Link to sign up page here */}
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>Username
                     <input
                         type='text'
@@ -76,14 +75,14 @@ const Signin = () => {
                         onChange={onInputChange}
                     />
                 </label>
-                <div className='errors'>
-                    <div>{formErrors.username}</div>
-                    <div>{formErrors.password}</div>
-                </div>
-                <button disabled={disabled}>Sign In</button>
-            </form>
-        </div>
-    )
-}
+            <button disabled={disabled}>Sign In</button>
+            <div className='errors'>
+                <div>{formErrors.username}</div>
+                <div>{formErrors.password}</div>
+            </div>
+      </form>
+    </div>
+  );
+};
 
 export default Signin;

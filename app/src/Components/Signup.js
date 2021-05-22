@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import signUpSchema from '../Validation/SignupSchema'
-import * as yup from'yup'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import signUpSchema from "../Validation/SignupSchema";
+import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const initialFormValues = {
-  username: "",
-  email: "",
-  password: "",
+    username: "",
+    email: "",
+    password: "",
 };
 
-const inistialFormErrors = {
-  username: "",
-  email: "",
-  password: "",
+const initialFormErrors = {
+    username: "",
+    email: "",
+    password: "",
 };
 
 const Signup = () => {
-  const [users, setUsers] = useState([]);
-  const [formValues, setFormValues] = useState(initialFormValues);
-  const [formErrors, setFormErrors] = useState(inistialFormErrors);
-  const [disabled, setDisabled] = useState(true);
+    const [users, setUsers] = useState([])
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [formErrors, setFormErrors] = useState(initialFormErrors)
+    const [disabled, setDisabled] = useState(true)
 
     const postUser = newUser => {
         setUsers([...users, newUser])
@@ -38,7 +38,7 @@ const Signup = () => {
         })
 
         .catch(error => {
-            setFormErrors({...formErrors, [name]: error.errorrs[0]})
+            setFormErrors({...formErrors, [name]: error.errors[0]})
         })
 
         setFormValues({...formValues, [name]: value})
@@ -56,10 +56,10 @@ const Signup = () => {
     }
 
    useEffect(() => {
-       signUpSchema.isValid(formValues).then(valid => {
-           setDisabled(!valid)
+       signUpSchema.isValid(formValues).then((valid) => {
+         setDisabled(!valid)
        })
-   }, [formValues])
+    }, [formValues])
 
     return(
         <div>
@@ -69,9 +69,8 @@ const Signup = () => {
                     <span>Sign in here!</span>
                 </Link>
             </p>
-            {/* Link to sign in page here  */}
             <form onSubmit={onSubmit}>
-                <label>Username 
+            <label>Username 
                     <input
                         type='text'
                         value={formValues.username}
