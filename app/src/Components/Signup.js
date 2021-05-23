@@ -89,7 +89,7 @@ const Signup = () => {
                 <label>Password
                     <input
                         type='password'
-                        value={formValues.email}
+                        value={formValues.password}
                         name='password'
                         onChange={onInputChange}
                     />
