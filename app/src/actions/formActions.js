@@ -4,7 +4,7 @@ export const setUsers = (details) => {
     payload: details,
   };
 };
-export const setFormvalues = (details) => {
+export const setFormValues = (details) => {
   return {
     type: 'SET_FORM_VALUES',
     payload: details,
@@ -16,7 +16,7 @@ export const setFormErrors = (details) => {
     payload: details,
   };
 };
-.export const setDisabled = (details) => {
+export const setDisabled = (details) => {
   return {
     type: 'SET_DISABLED',
     payload: details,
