@@ -4,5 +4,8 @@ button, input {
 
 /* Inventory */
 .inventory {
-  background-color: blue;
+  border: 2px dotted blue;
+}
+.invCard {
+  border: 2px dotted green;
 }
