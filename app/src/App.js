@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 // components
 import Signup from './Components/Signup'
 import Signin from './Components/Signin'
+import Inventory from './Components/Inventory'
 
 function App() {
   return(
@@ -18,8 +19,11 @@ function App() {
           <Route path='/signin'>
             <Signin />
           </Route>
+          <Route path='/inventory'>
+            <Inventory />
+          </Route>
         </Switch>
-      </div>;
+      </div>
     </Router>
   )
 }

@@ -1,3 +1,44 @@
 button, input {
   background-color: white;
 }
+
+/* Inventory */
+.inventory {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inventory h1 {
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+.inventory .plants {
+  width: 60%;
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.plant-link {
+  text-decoration: none;
+  color: black;
+}
+.plantCard {
+  border: 2px dotted green;
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+  transition: 0.2s;
+}
+.plantCard:hover {
+  cursor: pointer;
+  box-shadow: mediumseagreen -5px 5px 1px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: darkgreen;
+}
+.plant-name {
+  text-align: center;
+}
