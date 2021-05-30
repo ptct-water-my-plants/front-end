@@ -1,9 +1,10 @@
 const InvCard = (props) => {
   return (
-    <div className = 'invCard'>
-      <img href = {props.img} alt = '' />
-      <h2 className = 'plant-name'>{props.plantName}</h2>
-    </div>
+    <a href = {props.wikiLink} className = 'plant-link' rel = 'noreferrer' target = '_blank'>
+      <div className = 'plantCard'>
+        <h2 className = 'plant-name'>{props.plantName}</h2>
+      </div>
+    </a>
   )
 };
 
