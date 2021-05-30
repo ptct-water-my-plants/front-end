@@ -10,7 +10,8 @@ export const initialState = {
     email: '',
     password: ''
   },
-  disabled: true
+  disabled: true,
+  plantList: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -34,6 +35,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         disabled: action.payload
+      };
+    case 'SET_PLANT_LIST':
+      return {
+        ...state,
+        plantList: action.payload
       }
     default:
       return state;
