@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
+
+import { connect } from 'react-redux'
+import { setPlantList } from '../actions/InventoryActions'
 
 import InvCard from './InvCard'
 
-const Inventory = () => {
-  const [plantList, setPlantList] = useState([])
-
+const Inventory = ({ plantList, setPlantList }) => {
   useEffect(() => {
     axios
       .get(`https://www.growstuff.org/api/v1/crops`)
@@ -13,11 +14,8 @@ const Inventory = () => {
       .catch(err => console.log(err))
   }, [])
 
-  // const handleClick = () => console.log(plantList[1].attributes.["en-wikipedia-url"])
-  
   return (
     <div className = 'inventory'>
-      {/* <button onClick = {handleClick}>Button</button> */}
       <h1>Plants Inventory!</h1>
       <div className = 'plants'>
         {plantList.map((plant, key) => <InvCard plantName = {plant.attributes.name} wikiLink = {plant.attributes.["en-wikipedia-url"]} key = {key} />)}
@@ -26,4 +24,8 @@ const Inventory = () => {
   )
 };
 
-export default Inventory;
+const mapStateToProps = (state) => ({
+  plantList: state.plantList
+});
+
+export default connect(mapStateToProps, { setPlantList })(Inventory);
