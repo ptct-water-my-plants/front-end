@@ -12,7 +12,7 @@ const Inventory = ({ plantList, setPlantList }) => {
       .get(`https://www.growstuff.org/api/v1/crops`)
       .then(res => setPlantList(res.data.data))
       .catch(err => console.log(err))
-  }, [])
+  }, [setPlantList])
 
   return (
     <div className = 'inventory'>
