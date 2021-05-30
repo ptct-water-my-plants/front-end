@@ -29,37 +29,37 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookF, faInstagram, faLinkedinIn, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons'
 
-const Signin = (props) => {
+const Signin = ({ formValues, formErrors, disabled, setFormErrors, setFormValues }) => {
     const onInputChange = event => {
         const { name, value } = event.target
 
         yup.reach(signInSchema, name)
             .validate(value)
             .then(() => {
-                props.setFormErrors({ ...props.formErrors, [name]: '' })
+                setFormErrors({ ...formErrors, [name]: '' })
             })
             .catch(error => {
-                props.setFormErrors({ ...props.formErrors, [name]: error.errors[0] })
+                setFormErrors({ ...formErrors, [name]: error.errors[0] })
             })
 
-        props.setFormValues({ ...props.formValues, [name]: value })
+        setFormValues({ ...formValues, [name]: value })
     }
 
     const onSubmit = event => {
         event.preventDefault()
 
         const existingUser = {
-            username: props.formValues.username.trim(),
-            password: props.formValues.password.trim(),
+            username: formValues.username.trim(),
+            password: formValues.password.trim(),
         }
         console.log('Existing user sign in', existingUser)
     }
 
     useEffect(() => {
-        signInSchema.isValid(props.formValues).then((valid) => {
-            props.setDisabled(!valid)
+        signInSchema.isValid(formValues).then((valid) => {
+            setDisabled(!valid)
         });
-    }, [props.formValues])
+    }, [formValues])
 
     return (
         <Container className="themed-container" fluid={true}>
@@ -83,7 +83,7 @@ const Signin = (props) => {
                                         <Label>Username
                                             <Input
                                                 type='text'
-                                                value={props.formValues.username}
+                                                value={formValues.username}
                                                 name='username'
                                                 onChange={onInputChange}
                                             />
@@ -99,7 +99,7 @@ const Signin = (props) => {
                                         <Label>Password
                                             <Input
                                                 type='password'
-                                                value={props.formValues.password}
+                                                value={formValues.password}
                                                 name='password'
                                                 onChange={onInputChange}
                                             />
@@ -108,20 +108,20 @@ const Signin = (props) => {
                                 </InputGroup>
                             </FormGroup>
                         </Col>
-                        <Button disabled={props.disabled}>Sign In</Button>
+                        <Button disabled={disabled}>Sign In</Button>
                         <div className='errors'>
-                            <div>{props.formErrors.username}</div>
-                            <div>{props.formErrors.password}</div>
+                            <div>{formErrors.username}</div>
+                            <div>{formErrors.password}</div>
                         </div>
                     </Form>
                     <CardFooter>
                         <CardTitle tag="h4">Contact Us</CardTitle>
 
                         <h3>Email</h3>
-                        <a href="#">information@untitled.ext</a>
+                        <a href="https://">information@untitled.ext</a>
 
                         <h3>Phone</h3>
-                        <a href="#">(000) 000-0000</a>
+                        <a href="https://">(000) 000-0000</a>
 
                         <h3>Address</h3>
                         <span>1234 Somewhere Road, Nashville, TN 00000</span>
@@ -129,22 +129,22 @@ const Signin = (props) => {
                         <h3>Elsewhere</h3>
 
                         <FontAwesomeIcon icon={faTwitter} />
-                        <a href='#'> Twitter </a>
+                        <a href='https://'> Twitter </a>
 
                         <FontAwesomeIcon icon={faFacebookF} />
-                        <a href="#"> Facebook </a>
+                        <a href="https://"> Facebook </a>
 
                         <FontAwesomeIcon icon={faInstagram} />
-                        <a href="#"> Instagram </a>
+                        <a href="https://"> Instagram </a>
 
                         <FontAwesomeIcon icon={faLinkedinIn} />
-                        <a href="#"> LinkedIn </a>
+                        <a href="https://"> LinkedIn </a>
 
                         <FontAwesomeIcon icon={faGithub} />
                         <a href="https://github.com/ptct-water-my-plants"> GitHub </a>
 
                         <FontAwesomeIcon icon={faCodepen} />
-                        <a href="#"> Codepen </a>
+                        <a href="https://"> Codepen </a>
 
 
                     </CardFooter>

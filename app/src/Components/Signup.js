@@ -158,10 +158,10 @@ const Signup = (props) => {
                         <CardTitle tag="h4">Contact Us</CardTitle>
 
                         <h3>Email</h3>
-                        <a href="#">information@untitled.ext</a>
+                        <a href="https://">information@untitled.ext</a>
 
                         <h3>Phone</h3>
-                        <a href="#">(000) 000-0000</a>
+                        <a href="https://">(000) 000-0000</a>
 
                         <h3>Address</h3>
                         <span>1234 Somewhere Road, Nashville, TN 00000</span>
@@ -169,22 +169,22 @@ const Signup = (props) => {
                         <h3>Elsewhere</h3>
 
                         <FontAwesomeIcon icon={faTwitter} />
-                        <a href='#'> Twitter </a>
+                        <a href='https://'> Twitter </a>
 
                         <FontAwesomeIcon icon={faFacebookF} />
-                        <a href="#"> Facebook </a>
+                        <a href="https://"> Facebook </a>
 
                         <FontAwesomeIcon icon={faInstagram} />
-                        <a href="#"> Instagram </a>
+                        <a href="https://"> Instagram </a>
 
                         <FontAwesomeIcon icon={faLinkedinIn} />
-                        <a href="#"> LinkedIn </a>
+                        <a href="https://"> LinkedIn </a>
 
                         <FontAwesomeIcon icon={faGithub} />
                         <a href="https://github.com/ptct-water-my-plants"> GitHub </a>
 
                         <FontAwesomeIcon icon={faCodepen} />
-                        <a href="#"> Codepen </a>
+                        <a href="https://"> Codepen </a>
 
 
                     </CardFooter>
