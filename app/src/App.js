@@ -7,11 +7,13 @@ import { Switch, Route } from 'react-router-dom'
 import Signup from './Components/Signup'
 import Signin from './Components/Signin'
 import Inventory from './Components/Inventory'
+import NavBar from './Components/NavBar'
 
 function App() {
   return(
     <Router>
       <div className="App">
+        <NavBar />
         <Switch>
           <Route exact path='/'>
             <Signup />
